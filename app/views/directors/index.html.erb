@@ -1,2 +1,22 @@
-<h1>Directors#index</h1>
-<p>Find me in app/views/directors/index.html.erb</p>
+<h1 class="#" style="font-family: 'Julius Sans One', sans-serif;">Rick Rubins Profile</h1>
+
+<body class="Directorpage">
+
+<div class="profile-top-thing"> Welcome, <%= @director.first_name%> <%=@director.last_name%>
+<%= image_tag("rickrubin.jpg", size: "170x170", alt: "Edit Entry") %>
+</div>
+
+<div class="card-profile">
+  <p>First Name:  <%= @director.first_name %></p>
+  <p>Last Name:  <%= @director.last_name %></p>
+  <p>Email:  <%= @director.email %></p>
+  <p>Salary: $<%= @director.salary %></p>
+
+
+<hr id="hr-admin-profile">
+
+
+</div>
+</div>
+</body>
+

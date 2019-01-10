@@ -1,0 +1,15 @@
+<body>
+
+<h1 id="hero-title">Diamond Soundz Institute of Audio Engineering</h1>
+<div  class="login"> 
+<%= form_for(:pages, url: root_path) do |f| %>
+<h2 class="log"> Admin Login   </h2>
+ <%= f.label :email %>
+ <%= f.email_field :email, class: "t1" %> 
+<%= f.label :password %>
+<%= f.password_field :password, class: "t2", id: "input-field-login" %>
+<%= f.submit "Log in", class: "submit-button" %>
+        <% end %>
+</div>
+
+</body>

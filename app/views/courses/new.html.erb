@@ -1,2 +1,16 @@
 <h1>Courses#new</h1>
-<p>Find me in app/views/courses/new.html.erb</p>
+
+<%= form_for(@course) do |f| %>
+
+<label> Name Your Course</label><br>
+<%= f.text_field :name %><br>
+
+<label>Add Some Hours To Your Course</label><br>
+<%= f.number_field :class_hr %><br>
+
+
+<p>
+  <%= f.submit "Create Course" %>
+</p>
+
+<% end %>

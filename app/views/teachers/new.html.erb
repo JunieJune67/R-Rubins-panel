@@ -1,2 +1,21 @@
 <h1>Teachers#new</h1>
-<p>Find me in app/views/teachers/new.html.erb</p>
+
+<%= form_for(@teacher) do |f|%>
+<%= f.label :first_name, "First Name"%>
+<%= f.text_field :first_name%><br>
+<%= f.label :last_name, "Last Name"%>
+<%= f.text_field :last_name%><br>
+<%= f.label :password%>
+<%= f.password_field :password%><br>
+<%= f.label :education, "Education Level"%>
+<%= f.select(:education) do %>
+  <% [['GED', 'GED'], ['Highschool'], ['College'], ['Masters'], ['PHD'], ['Professional']].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.last) %>
+  <% end %>
+  <% end%><br>
+  <%= f.label :salary, "Salary Desire"%>
+  <%= f.number_field :salary%><br>
+<%= f.label :age%>
+<%= f.number_field :age%><br>
+<%= f.submit "Submit"%>
+<% end %>

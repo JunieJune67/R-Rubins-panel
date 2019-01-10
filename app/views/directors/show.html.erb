@@ -1,2 +1,24 @@
-<h1>Directors#show</h1>
-<p>Find me in app/views/directors/show.html.erb</p>
+
+
+
+
+
+<body class="Directorpage">
+
+<div class="profile-top-thing"> Welcome, <%= @director.first_name%> <%=@director.last_name%></div>
+
+<div class="card-profile">
+  <p>First Name:  <%= @director.first_name %></p>
+  <p>Last Name:  <%= @director.last_name %></p>
+  <p>Email:  <%= @director.email %></p>
+
+<hr id="hr-admin-profile">
+
+<div class="edit-profile button">
+<%= link_to edit_director_path, {class: 'btn btn-danger admin-profile-edit'} do %>
+Edit Profile
+<% end %>
+
+</div>
+</div>
+</body>

@@ -1,0 +1,31 @@
+<h1>Cohort Settings</h1>
+
+<%= form_for(@cohort) do |form| %>
+
+<label>Give Your Cohort A Name</label><br>
+<%= form.text_field :name %> <br>
+
+<label>Apply Start Date</label><br>
+<%= form.date_field :s_date %> <br>
+
+<label>Apply End Date</label><br>
+<%= form.date_field :e_date %> <br><br>
+
+<label>Select Students</label><br>
+
+<%= form.collection_select :student_ids, Student.all, :id, :stu_full_name, {include_blank: true},{:multiple => true, class: 'chosen-select'} %> <br>
+
+
+
+<br>
+
+
+
+<label>Select Teacher</label><br>
+<%= collection_select(:cohort, :teacher_id, Teacher.all, :id, :teach_full_name, {include_blank: true}) %><br>
+
+<p>
+<%= form.submit "Update Cohort" %>
+</p>
+
+<% end %>

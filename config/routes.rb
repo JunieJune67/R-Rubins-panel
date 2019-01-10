@@ -1,31 +1,42 @@
 Rails.application.routes.draw do
-  get 'cohorts/new'
-  get 'cohorts/show'
-  get 'courses/new'
-  get 'courses/show'
-  get 'teachers/new'
-  get 'teachers/edit'
-  get 'teachers/index'
-  get 'teachers/delete'
-  get 'teachers/show'
-  get 'students/new'
-  get 'students/edit'
-  get 'students/index'
-  get 'students/delete'
-  get 'students/show'
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/new'
-  root 'pages#home'
-  
-  resources :directors
+  root 'pages#login'
+  resources :directors 
+  resources :teachers
+  resources :students
+  resources :courses
+  resources :cohorts
+
+  get '/directors', to: 'directors#show'
+  post '/', to: 'pages#home'
+
+
+   get '/diamondadmin', to: 'pages#home' 
+   
+   get '/newstudent', to:  'students#new'
+   get '/allstudents', to: 'students#index'
+   
+   get '/teachers/:id', to:  'teachers#update'
+   get '/teachers', to: 'teachers#index'
+   get '/newteacher', to: 'teachers#new'
+   
+   get '/courses/:id', to: 'courses#show'
+   get  '/courses/:id', to: 'courses#edit'
+   get '/courses', to: 'courses#new'
+   get  '/courses', to: 'courses#index'
+   
+   get '/newcohort', to: 'cohorts#new'
+   get '/cohorts/:id', to: 'cohorts#show'
+   get '/cohorts', to: 'cohorts#index'
+   
+
 
   
-
-  get 'directors/index'
-  get 'directors/edit'
-  get 'directors/delete'
-  get 'directors/show'
+  
+  
+  
+  
+  
+  
   
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

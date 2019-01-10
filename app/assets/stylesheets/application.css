@@ -13,3 +13,201 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Montserrat');
+
+/* // font-family: 'Julius Sans One', sans-serif;
+// font-family: 'Montserrat', sans-serif; */
+
+body {
+    background-image: image-url('photo-1511814267646-cbd188d60c35.jpeg');
+    color: #DF3907;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#hero-title {
+    font-size: 40px;
+    color: #9F3114;
+    text-shadow: white 1px 2px;
+    align-items: center;
+    font-family: 'Julius Sans One', sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+
+.login {
+    padding: 40px;
+    width: 274px;
+    background-color: #798D8A;
+    margin: 0 auto 10px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    opacity: 0.5;
+    }
+
+    .login input {
+        width: 100%;
+        margin-bottom: 10px;
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        border-top: 1px solid #c0c0c0;
+        border-radius: 2px;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+
+.log {
+    text-align: center;
+    color: #9F3114;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+em {
+    font-style: normal;
+ }
+ 
+ a {
+    text-decoration: none;
+    color: inherit;
+ } 
+ 
+ .s-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+ }
+ 
+ .s-layout__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+ }
+ 
+ /* Sidebar */
+ .s-sidebar__trigger {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4em;
+    background: #192b3c;
+ }
+ 
+ .s-sidebar__trigger > i {
+    display: inline-block;
+    margin: 1.5em 0 0 1.5em;
+    color: #f07ab0;
+ }
+ 
+ .s-sidebar__nav {
+    position: fixed;
+    top: 0;
+    left: -15em;
+    overflow: hidden;
+    transition: all .3s ease-in;
+    width: 15em;
+    height: 100%;
+    background: #243e56;
+    color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .s-sidebar__nav:hover,
+ .s-sidebar__nav:focus,
+ .s-sidebar__trigger:focus + .s-sidebar__nav,
+ .s-sidebar__trigger:hover + .s-sidebar__nav {
+    left: 0;
+ }
+ 
+ .s-sidebar__nav ul {
+    position: absolute;
+    top: 4em;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 15em;
+ }
+ 
+ .s-sidebar__nav ul li {
+    width: 100%;
+ }
+ 
+ .s-sidebar__nav-link {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 4em;
+ }
+ 
+ .s-sidebar__nav-link em {
+    position: absolute;
+    top: 50%;
+    left: 4em;
+    transform: translateY(-50%);
+ }
+ 
+ .s-sidebar__nav-link:hover {
+    background: #4d6276;
+ }
+ 
+ .s-sidebar__nav-link > i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+ }
+ 
+ .s-sidebar__nav-link > i::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ 
+ /* Mobile First */
+ @media (min-width: 42em) {
+    .s-layout__content {
+       margin-left: 4em;
+    }
+    
+    /* Sidebar */
+    .s-sidebar__trigger {
+       width: 4em;
+    }
+    
+    .s-sidebar__nav {
+       width: 4em;
+       left: 0;
+    }
+    
+    .s-sidebar__nav:hover,
+    .s-sidebar__nav:focus,
+    .s-sidebar__trigger:hover + .s-sidebar__nav,
+    .s-sidebar__trigger:focus + .s-sidebar__nav {
+       width: 15em;
+    }
+ }
+ 
+ @media (min-width: 68em) {
+    .s-layout__content {
+       margin-left: 15em;
+    }
+    
+    /* Sidebar */
+    .s-sidebar__trigger {
+       display: none
+    }
+    
+    .s-sidebar__nav {
+       width: 15em;
+    }
+    
+    .s-sidebar__nav ul {
+       top: 1.3em;
+    }
+ }

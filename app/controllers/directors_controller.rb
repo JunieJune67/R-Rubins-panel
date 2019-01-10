@@ -1,13 +1,28 @@
 class DirectorsController < ApplicationController
-  def index
-  end
+  
+def index
+@director = Director.find_by(email: "Rrubin@example.com")
+end
 
-  def edit
-  end
+def new
+  @director = Director.new
+end
 
-  def delete
-  end
 
-  def show
+
+def director_params
+    params.require(:director).params(:first_name, :last_name, :age, :education, :salary)
+end
+
+def show
+  @director = Director.find(params[:id])
+end
+
+  private
+  def require_director
+    if session[:user] != "director"
+    else
+      flash.new[:error] = "Your not The Director"
+    end
   end
 end

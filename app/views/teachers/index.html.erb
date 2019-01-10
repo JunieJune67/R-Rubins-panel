@@ -1,2 +1,42 @@
-<h1>Teachers#index</h1>
-<p>Find me in app/views/teachers/index.html.erb</p>
+<h1 class="#" style="font-family: 'Julius Sans One', sans-serif;">All Teachers</h1>
+
+
+
+<table class="table table-hover table-dark">
+ <thead>
+    <tr>
+  <th scope="col">First Name</th>
+  <th scope="col">Last Name</th>
+  <th scope="col">Age</th>
+  <th scope="col">Salary</th>
+  <th scope="col">Education</th>
+  <th scope="col">Teacher Profile</th>
+  <th scope="col">Remove a Teacher</th>
+</tr>
+</thead>
+  <tbody>
+    <tr>
+<% @teacher.each do |teach| %>
+    <tr id="pow-<%= teach.id %>">
+      <td><%= teach.first_name %></td>
+      <td><%= teach.last_name %></td>
+      <td><%= teach.age %></td>
+      <td>$<%= teach.salary %></td>
+      <td><%= teach.education %></td>
+      <td class="table-styles"><a href="/teachers/<%= teach.id %>">View Teacher</a></td>
+      <td class="table-styles" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
+      }">
+        <%= link_to teacher_path(teach.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
+        <i class="land" id="#"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+<br>
+<p class="edit-button-all">
+<%= link_to root_path,  { class: '#' } do %>
+<i class="#"></i> Back
+<% end %>
+</p>

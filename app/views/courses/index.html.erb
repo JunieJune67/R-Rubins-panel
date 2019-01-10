@@ -1,0 +1,31 @@
+<h2 class="#" style="font-family: 'Julius Sans One', sans-serif;">All Courses</h2>
+<table class="table table-hover table-dark">
+ <thead>
+    <tr>
+   <th>Course Name</th>
+   <th>Course Hours</th>
+   <th>Course Main Page</th>
+   <th>Remove Course</th>
+  </tr>
+  </thead>
+  </tbody>
+
+<% @course.each do |c| %>
+    <tr id="#-<%= c.id %>">
+      <td><%= c.name %></td>
+      <td><%= c.class_hr %></td>
+      <td class="table-styles"><a href="/courses/<%= c.id %>">View Course</a></td>
+      <td class="table-styles" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
+      }">
+        <%= link_to course_path(c.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
+        <i class="#" id="#"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <br>
+
+  <%= link_to root_path,  { class: 'btn btn-primary goback-button' } do %>
+  <i class="fas fa-long-arrow-alt-left"></i> Back
+  <% end %>

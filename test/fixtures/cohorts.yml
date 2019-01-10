@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  s_date: 2018-12-30
-  e_date: 2018-12-30
-  instructor_id: 1
+  s_date: 2019-01-02
+  e_date: 2019-01-02
+  teacher_id: 1
   course_id: 1
 
 two:
   name: MyString
-  s_date: 2018-12-30
-  e_date: 2018-12-30
-  instructor_id: 1
+  s_date: 2019-01-02
+  e_date: 2019-01-02
+  teacher_id: 1
   course_id: 1
