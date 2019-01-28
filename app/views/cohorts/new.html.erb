@@ -11,13 +11,13 @@
 <%= form.date_field :e_date %> <br>
 
 <label>Apply Students</label><br>
-<%= form.collection_select(:student_ids, Student.all, :id, :full_name, {include_blank: true}, {multiple: true}) %>
+<%= form.collection_select(:student_ids, Student.all, :id, :stu_full_name, {include_blank: true}, {multiple: true}) %>
 
 <br>
 <br>
 
 <label>Apply Teachers</label><br>
-<%= form.collection_select(:teacher_id, Teacher.all, :id, :full_name, {include_blank: true}) %><br>
+<%= form.collection_select(:teacher_id, Teacher.all, :id, :teach_full_name, {include_blank: true}) %><br>
 
 <label>Select Course</label><br>
 <%= form.collection_select(:course_id, Course.all, :id, :name, {include_blank: true}) %><br>

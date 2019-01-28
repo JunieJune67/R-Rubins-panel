@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'pages#login'
+  devise_for :admins
+  
+  root to: redirect('/diamondadmin')
+  resources :admins
   resources :directors 
   resources :teachers
   resources :students
@@ -7,10 +10,11 @@ Rails.application.routes.draw do
   resources :cohorts
 
   get '/directors', to: 'directors#show'
-  post '/', to: 'pages#home'
+  
+  get '/diamondadmin', to: 'pages#home'
+  
 
-
-   get '/diamondadmin', to: 'pages#home' 
+   
    
    get '/newstudent', to:  'students#new'
    get '/allstudents', to: 'students#index'

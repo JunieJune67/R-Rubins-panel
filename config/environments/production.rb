@@ -83,6 +83,8 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -98,3 +100,5 @@ if ENV['RACK_ENV']
 else
   set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 end
+
+

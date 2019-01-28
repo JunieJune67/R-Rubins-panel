@@ -12,15 +12,15 @@
   </thead>
   </tbody>
 <% @cohort.each do |cohort| %>
-    <tr id="#-<%= cohort.id %>">
+    <tr id="cohortpow-<%= cohort.id %>">
       <td><%= cohort.name %></td>
       <td><%= cohort.s_date %></td>
       <td><%= cohort.e_date %></td>
-      <td class="table-life"><a href="/cohorts/<%= cohort.id %>">View Cohort</a></td>
-      <td class="table-life" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
+      <td class="table-learn"><a href="/cohorts/<%= cohort.id %>">View Cohort</a></td>
+      <td class="table-learn" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
       }">
         <%= link_to cohort_path(cohort.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
-        <i class="far fa-trash-alt animated rubberBand" id="trashbin-animation"></i>
+        <%= image_tag("delete-button.svg" )   %>
         <% end %>
       </td>
     </tr>

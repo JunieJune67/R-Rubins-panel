@@ -1,3 +1,15 @@
+<style>
+img {
+  width: 300px;
+  height:300px;
+}
+p {
+  text-align: center;
+  align-items: center;
+  font-family:'Poppins', sans-serif !important;
+  text-decoration: underline;
+}
+</style>
 
 <div class="s-layout">
     <!-- Sidebar -->
@@ -27,12 +39,59 @@
              <%=link_to "Courses", courses_path%>
             </li>
          </ul>
+          <%= link_to 'Log Out', destroy_admin_session_path, method: :DELETE %>
       </nav>
-    </div>
-    
-    <center> <img id="rickr" src="assets/images/rickrubin.jpg">  </center>
-    </div>
+ </div>
     <br>
+    <br>
+    
+ 
+
+
+
+
+
+<div class="row">
+  <div class="col-md-3 dashboard-things">
+
+<article>Create a New Student</article>
+<%= link_to new_student_path do %>
+
+<%= image_tag("student.jpeg", size: "300x300", alt: "Edit Entry") %>
+<% end %>
+
+
+
+<article>Create a New Teacher</article>
+
+<%= link_to new_teacher_path do %>
+<%= image_tag("teacher.jpg", size: "300x300", alt: "Edit Entry") %>
+<% end %>
+</div>
+
+
+<div class="col-md-3 dashboard-things">
+
+  <article>Create a New Cohort</article>
+
+<%= link_to new_cohort_path do %>
+<%= image_tag("cohort.jpg", size: "300x300", alt: "Edit Entry") %>
+<% end %>
+
+
+<article>Create a New Course</article>
+
+<%= link_to new_course_path do %>
+<%= image_tag("course.jpeg", size: "300x300", alt: "Edit Entry") %>
+<% end %>
+</div>
+
+</div>
+
+
+
+
+    
 
 
 

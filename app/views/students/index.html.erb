@@ -21,18 +21,18 @@
   </thead>
   <tbody>
 
-<% @student.each do |s| %>
-    <tr id="pow-<%= s.id %>">
-      <td><%= s.first_name %></td>
+<% @student.each do |stu| %>
+    <tr id="stupow-<%= stu.id %>">
+      <td><%= stu.first_name %></td>
 
-      <td class="#"><%= s.last_name %></td>
-      <td class="table-learn"><%= s.age %></td>
-      <td class="table-learn"><%= s.education %></td>
+      <td class="#"><%= stu.last_name %></td>
+      <td class="table-learn"><%= stu.age %></td>
+      <td class="table-learn"><%= stu.education %></td>
       
-      <td class="table-learn"><a href="/students/<%= s.id %>">View Student</a></td>
+      <td class="table-learn"><a href="/students/<%= stu.id %>">View Student</a></td>
       <td class="table-learn" style="font-size: 1.5em; padding-left: 30px;    align-items: center; vertical-align: middle;justify-content: center; display: flex; }">
-        <%= link_to student_path(s.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
-        <i class="#" id="#"></i>
+      <%= link_to student_path(stu.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
+       <%= image_tag("delete-button.svg" )   %>
        
       </td>
     </tr>

@@ -17,17 +17,17 @@
   <tbody>
     <tr>
 <% @teacher.each do |teach| %>
-    <tr id="pow-<%= teach.id %>">
+    <tr id="techpow-<%= teach.id %>">
       <td><%= teach.first_name %></td>
       <td><%= teach.last_name %></td>
       <td><%= teach.age %></td>
       <td>$<%= teach.salary %></td>
       <td><%= teach.education %></td>
-      <td class="table-styles"><a href="/teachers/<%= teach.id %>">View Teacher</a></td>
-      <td class="table-styles" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
+      <td class="table-learn"><a href="/teachers/<%= teach.id %>">View Teacher</a></td>
+      <td class="table-learn" style="font-size: 1.5em; padding-left: 30px; align-items: center; vertical-align: middle;justify-content: center; display: flex;
       }">
         <%= link_to teacher_path(teach.id), { method: :delete, data: {confirm: 'Are you sure?'}, :remote => true } do %>
-        <i class="land" id="#"></i>
+        <%= image_tag("delete-button.svg" )   %>
         <% end %>
       </td>
     </tr>

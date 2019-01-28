@@ -1,0 +1,36 @@
+<% if session[:user_id]!= nil%>
+
+<div class="s-layout">
+    <!-- Sidebar -->
+    <div class="s-layout__sidebar">
+      <a class="s-sidebar__trigger" href="#0">
+         <i class="fa fa-bars"></i>
+      </a>
+    
+      <nav class="s-sidebar__nav">
+         <ul>
+            <li>
+            <%=link_to "DirectorProfile", directors_path%>
+            </li>
+            <li>
+
+            <%=link_to "Teachers", teachers_path%>
+            </li>
+            <li>
+            <%=link_to "Students", students_path%>
+              </li>
+               
+                <li>
+                <%=link_to "Cohorts", cohorts_path%>
+             </li>
+             
+             <li>
+             <%=link_to "Courses", courses_path%>
+            </li>
+         </ul>
+      </nav>
+    </div>
+    <%= link_to 'Log Out', destroy_admin_session_path, method: :DELETE %>
+    
+    <% end %>
+    </div>
